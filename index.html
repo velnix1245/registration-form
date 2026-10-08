@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма реєстрації користувача</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <h1>Реєстрація користувача</h1>
+    <p class="intro">Заповніть поля для реєстрації.</p>
+    <form id="registrationForm" novalidate>
+      <label for="firstName">Ім’я</label>
+      <input id="firstName" name="firstName" type="text" autocomplete="given-name" required>
+      <label for="lastName">Прізвище</label>
+      <input id="lastName" name="lastName" type="text" autocomplete="family-name" required>
+      <label for="email">Електронна пошта</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <label for="password">Пароль</label>
+      <div class="password-field"><input id="password" name="password" type="password" autocomplete="new-password" minlength="6" required><button type="button" class="toggle-password" data-target="password" aria-label="Показати пароль" aria-pressed="false">Показати</button></div>
+      <label for="confirmPassword">Підтвердження пароля</label>
+      <div class="password-field"><input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="6" required><button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Показати підтвердження пароля" aria-pressed="false">Показати</button></div>
+      <button type="submit">Зареєструватися</button>
+      <p id="message" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+</body>
+</html>
