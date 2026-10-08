@@ -1,3 +1,4 @@
+
 const form = document.getElementById('registrationForm');
 const message = document.getElementById('message');
 
@@ -29,12 +30,16 @@ form.addEventListener('submit', (event) => {
     return;
   }
 
-  // Навчальний дефект: збіг пароля і підтвердження поки не перевіряється.
+  if (password !== confirmPassword) {
+    message.textContent = 'Паролі не збігаються. Спробуйте ще раз.';
+    message.className = 'error';
+    return;
+  }
+
   message.textContent = 'Реєстрацію успішно виконано!';
   message.className = 'success';
 });
 
-// Кнопки показу тестових паролів.
 document.querySelectorAll('.toggle-password').forEach((button) => {
   button.addEventListener('click', () => {
     const input = document.getElementById(button.dataset.target);
